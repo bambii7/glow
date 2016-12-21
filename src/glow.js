@@ -1,52 +1,51 @@
-//
-//function hslToRgb(hsl){
-//    var h, s, l,
-//        r, g, b,
-//        temp1, temp2;
-//    // clone array
-//    hsl = hsl.slice(0)
-//
-//    hsl = degPercPercToHsl(hsl)
-//    h = hsl[0]
-//    s = hsl[1]
-//    l = hsl[2]
-//
-//    // greyscale
-//    if (s == 0) {
-//        r = l * 255
-//        g = l * 255
-//        b = l * 255
-//    } else {
-//        temp2 = (l < 0.5) ? l * (1 + s) : (l + s) - (s * l)
-//        temp1 = 2 * l - temp2
-//
-//        r = 255 * hueToRgb(temp1, temp2, h + 0.3333)
-//        g = Math.round(255 * hueToRgb(temp1, temp2, h))
-//        b = Math.round(255 * hueToRgb(temp1, temp2, h - 0.3333))
-//    }
-//
-//    return [r, g, b];
-//}
-//
-//function hueToRgb(temp1, temp2, hue) {
-//    var rgbValue = 0;
-//    if (hue < 0) {
-//        hue += 1
-//    }
-//    if (hue > 1) {
-//        hue -= 1
-//    }
-//
-//    if (6 * hue < 1 ) { // red
-//        rgbValue = temp1 + (temp2 - temp1) * 6 * hue
-//    } else if (2 * hue < 1 ) { // green
-//        rgbValue = temp2
-//    } else if (3 * hue < 2 ) { // blue
-//        rgbValue = temp1 + (temp2 - temp1) * (0.6666 - hue) * 6
-//    }
-//    console.log('rgbValue', rgbValue)
-//    return rgbValue;
-//}
+
+function hslToRgb(hsl){
+    var h, s, l,
+        r, g, b,
+        temp1, temp2;
+    // clone array
+    hsl = hsl.slice(0)
+
+    hsl = degPercPercToHsl(hsl)
+    h = hsl[0]
+    s = hsl[1]
+    l = hsl[2]
+
+    // greyscale
+    if (s == 0) {
+        r = l * 255
+        g = l * 255
+        b = l * 255
+    } else {
+        temp2 = (l < 0.5) ? l * (1 + s) : (l + s) - (s * l)
+        temp1 = 2 * l - temp2
+
+        r = Math.round(255 * hueToRgb(temp1, temp2, h + ( 1 / 3 )))
+        g = Math.round(255 * hueToRgb(temp1, temp2, h))
+        b = Math.round(255 * hueToRgb(temp1, temp2, h - 0.3333))
+    }
+
+    return [r, g, b];
+}
+
+function hueToRgb(temp1, temp2, hue) {
+    var rgbValue = 0;
+    if (hue < 0) {
+        hue += 1
+    }
+    if (hue > 1) {
+        hue -= 1
+    }
+
+    if (6 * hue < 1 ) { // red
+        rgbValue = temp1 + (temp2 - temp1) * 6 * hue
+    } else if (2 * hue < 1 ) { // green
+        rgbValue = temp2
+    } else if (3 * hue < 2 ) { // blue
+        rgbValue = temp1 + (temp2 - temp1) * (0.6666 - hue) * 6
+    }
+    return rgbValue;
+}
 
 function hexToHsl(hex) {
     var rgb = hexToRgb(hex)
@@ -64,13 +63,13 @@ function hslToDegPercPerc(hsl) {
     return hsl
 }
 
-//function degPercPercToHsl(hsl) {
-//    hsl[0] /= 360;
-//    hsl[1] /= 100;
-//    hsl[2] /= 100;
-//
-//    return hsl;
-//}
+function degPercPercToHsl(hsl) {
+    hsl[0] /= 360;
+    hsl[1] /= 100;
+    hsl[2] /= 100;
+
+    return hsl;
+}
 
 function rgbToHsl(rgb) {
     var max = 0, min = 0, maxAdd = 0, maxSub = 0,
