@@ -89,7 +89,7 @@ function rgbToHsl(rgb) {
         if (l < 0.5) {
             s = maxSub / maxAdd
         } else {
-            s = maxSub / (2 - maxAdd)
+            s = maxSub / ( 2 - max - min )
         }
 
         switch (max) {
