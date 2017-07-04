@@ -1,6 +1,6 @@
 
 
-class Glow {
+export class Glow {
   
   constructor() {
     this.cache = {}
@@ -127,6 +127,8 @@ class Glow {
   }
   
 }
+
+module.exports.Glow
 
 //var t = hexToHsl('#359ea7')
 //var m = hslToRgb(t);
