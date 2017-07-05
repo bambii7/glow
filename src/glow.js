@@ -126,6 +126,11 @@ export class Glow {
     })
   }
   
+  expandShortHex(shortHex) {
+    let hex = /[A-Fa-f0-9]{3}/.exec(shortHex)
+    return hex[0].split('').map((v) => {return v+v}).join('')
+  }
+  
 }
 
 module.exports.Glow
