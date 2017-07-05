@@ -114,9 +114,9 @@ export class Glow {
     return hslToDegPercPerc([h, s, l])
   }
   
-  hexToRgb(hex) {
-    hex = /[A-Fa-f0-9]{6}|[A-Fa-f0-9]{3}/.exec(hex)
-    if (hex === null) {
+  hexToRgb(hexValue) {
+    let hex = this.stringToHex(hexValue)
+    if (hex === null || hexValue === undefined) {
       throw "not a valid hex value"
     }
     hex = hex[0].match(/.{1,2}/g)
@@ -127,8 +127,12 @@ export class Glow {
   }
   
   expandShortHex(shortHex) {
-    let hex = /[A-Fa-f0-9]{3}/.exec(shortHex)
+    let hex = this.stringToHex(shortHex)
     return hex[0].split('').map((v) => {return v+v}).join('')
+  }
+  
+  stringToHex(hex) {
+    return /[A-Fa-f0-9]{6}|[A-Fa-f0-9]{3}/.exec(hex)
   }
   
 }

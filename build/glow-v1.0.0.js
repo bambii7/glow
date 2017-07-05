@@ -1,4 +1,4 @@
-"use strict";
+'use strict';
 
 Object.defineProperty(exports, "__esModule", {
     value: true
@@ -16,7 +16,7 @@ var Glow = exports.Glow = function () {
     }
 
     _createClass(Glow, [{
-        key: "hslToRgb",
+        key: 'hslToRgb',
         value: function hslToRgb(hsl) {
             var h, s, l, r, g, b, temp1, temp2;
             // clone array
@@ -44,7 +44,7 @@ var Glow = exports.Glow = function () {
             return [r, g, b];
         }
     }, {
-        key: "hueToRgb",
+        key: 'hueToRgb',
         value: function hueToRgb(temp1, temp2, hue) {
             var rgbValue = 0;
             if (hue < 0) {
@@ -67,13 +67,13 @@ var Glow = exports.Glow = function () {
             return rgbValue;
         }
     }, {
-        key: "hexToHsl",
+        key: 'hexToHsl',
         value: function hexToHsl(hex) {
             var rgb = hexToRgb(hex);
             return rgbToHsl(rgb);
         }
     }, {
-        key: "hslToDegPercPerc",
+        key: 'hslToDegPercPerc',
         value: function hslToDegPercPerc(hsl) {
             hsl[0] = Math.round(hsl[0] * 60);
             if (hsl[0] < 0) {
@@ -85,7 +85,7 @@ var Glow = exports.Glow = function () {
             return hsl;
         }
     }, {
-        key: "degPercPercToHsl",
+        key: 'degPercPercToHsl',
         value: function degPercPercToHsl(hsl) {
             hsl[0] /= 360;
             hsl[1] /= 100;
@@ -94,7 +94,7 @@ var Glow = exports.Glow = function () {
             return hsl;
         }
     }, {
-        key: "rgbToHsl",
+        key: 'rgbToHsl',
         value: function rgbToHsl(rgb) {
             var max = 0,
                 min = 0,
@@ -139,10 +139,10 @@ var Glow = exports.Glow = function () {
             return hslToDegPercPerc([h, s, l]);
         }
     }, {
-        key: "hexToRgb",
-        value: function hexToRgb(hex) {
-            hex = /[A-Fa-f0-9]{6}|[A-Fa-f0-9]{3}/.exec(hex);
-            if (hex === null) {
+        key: 'hexToRgb',
+        value: function hexToRgb(hexValue) {
+            var hex = /[A-Fa-f0-9]{6}|[A-Fa-f0-9]{3}/.exec(hexValue);
+            if (hex === null || hexValue === undefined) {
                 throw "not a valid hex value";
             }
             hex = hex[0].match(/.{1,2}/g);
@@ -150,6 +150,20 @@ var Glow = exports.Glow = function () {
             return hex.map(function (v) {
                 return parseInt(v, 16);
             });
+        }
+    }, {
+        key: 'expandShortHex',
+        value: function expandShortHex(shortHex) {
+            var hex = this.stringToHex(shortHex);
+            return hex[0].split('').map(function (v) {
+                return v + v;
+            }).join('');
+        }
+    }, {
+        key: 'stringToHex',
+        value: function stringToHex(hex) {
+            return (/[A-Fa-f0-9]{6}|[A-Fa-f0-9]{3}/.exec(hex)
+            );
         }
     }]);
 

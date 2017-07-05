@@ -21,7 +21,7 @@ describe('hexToRgb', function () {
   it('should throw an error if no hex value given', function () {
     let glow = new Glow()
     var fn = function () {
-      glow.hexToRgb('ZZZ') 
+      glow.hexToRgb('ZZZ')
     }
     expect(fn).to.throw()
   })
