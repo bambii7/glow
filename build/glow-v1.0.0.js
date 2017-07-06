@@ -141,12 +141,11 @@ var Glow = exports.Glow = function () {
     }, {
         key: 'hexToRgb',
         value: function hexToRgb(hexValue) {
-            var hex = /[A-Fa-f0-9]{6}|[A-Fa-f0-9]{3}/.exec(hexValue);
+            var hex = this.stringToHex(hexValue);
             if (hex === null || hexValue === undefined) {
                 throw "not a valid hex value";
             }
-            hex = hex[0].match(/.{1,2}/g);
-
+            hex = hex.match(/.{1,2}/g);
             return hex.map(function (v) {
                 return parseInt(v, 16);
             });
@@ -154,16 +153,16 @@ var Glow = exports.Glow = function () {
     }, {
         key: 'expandShortHex',
         value: function expandShortHex(shortHex) {
-            var hex = this.stringToHex(shortHex);
-            return hex[0].split('').map(function (v) {
+            return shortHex.split('').map(function (v) {
                 return v + v;
             }).join('');
         }
     }, {
         key: 'stringToHex',
-        value: function stringToHex(hex) {
-            return (/[A-Fa-f0-9]{6}|[A-Fa-f0-9]{3}/.exec(hex)
-            );
+        value: function stringToHex(hexString) {
+            var hex = /[A-Fa-f0-9]{6}|[A-Fa-f0-9]{3}/.exec(hexString)[0];
+            hex = hex.length === 3 ? this.expandShortHex(hex) : hex;
+            return hex;
         }
     }]);
 

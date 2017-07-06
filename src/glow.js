@@ -119,20 +119,20 @@ export class Glow {
     if (hex === null || hexValue === undefined) {
       throw "not a valid hex value"
     }
-    hex = hex[0].match(/.{1,2}/g)
-
+    hex = hex.match(/.{1,2}/g)
     return hex.map(function (v) {
       return parseInt(v, 16)
     })
   }
   
   expandShortHex(shortHex) {
-    let hex = this.stringToHex(shortHex)
-    return hex[0].split('').map((v) => {return v+v}).join('')
+    return shortHex.split('').map((v) => {return v+v}).join('')
   }
   
-  stringToHex(hex) {
-    return /[A-Fa-f0-9]{6}|[A-Fa-f0-9]{3}/.exec(hex)
+  stringToHex(hexString) {
+    let hex = /[A-Fa-f0-9]{6}|[A-Fa-f0-9]{3}/.exec(hexString)[0]
+    hex = hex.length === 3 ? this.expandShortHex(hex) : hex
+    return hex
   }
   
 }
