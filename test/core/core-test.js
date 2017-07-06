@@ -6,10 +6,10 @@ var Glow       = require('../../build/glow-v1.0.0').Glow
 
 describe('hexToRgb', function () {
 
-  it('should convert RGB to hsl values', function () {
+  it('should convert hex to rgb values', function () {
     let glow = new Glow()
-    let hsl = glow.hexToRgb('#359ea7')
-    expect(hsl).to.deep.equal([53, 158, 167])
+    let rgb = glow.hexToRgb('#359ea7')
+    expect(rgb).to.deep.equal([53, 158, 167])
   })
   
   it('should expand 3 digit hex values', function () {
@@ -30,6 +30,16 @@ describe('hexToRgb', function () {
       glow.hexToRgb('ZZZ')
     }
     expect(fn).to.throw()
+  })
+  
+});
+
+describe('rgbToHsl', function () {
+
+  it('should convert hex to hsl values', function () {
+    let glow = new Glow()
+    let hsl = glow.hexToHsl('#EBEBEB')
+    expect(hsl).to.deep.equal([0, 0, 92])
   })
   
 });

@@ -11,7 +11,7 @@ export class Glow {
       // clone array
       hsl = hsl.slice(0)
 
-      hsl = degPercPercToHsl(hsl)
+      hsl = this.degPercPercToHsl(hsl)
       h = hsl[0]
       s = hsl[1]
       l = hsl[2]
@@ -25,9 +25,9 @@ export class Glow {
           temp2 = (l < 0.5) ? l * (1 + s) : (l + s) - (s * l)
           temp1 = 2 * l - temp2
 
-          r = Math.round(255 * hueToRgb(temp1, temp2, h + ( 1 / 3 )))
-          g = Math.round(255 * hueToRgb(temp1, temp2, h))
-          b = Math.round(255 * hueToRgb(temp1, temp2, h - 0.3333))
+          r = Math.round(255 * this.hueToRgb(temp1, temp2, h + ( 1 / 3 )))
+          g = Math.round(255 * this.hueToRgb(temp1, temp2, h))
+          b = Math.round(255 * this.hueToRgb(temp1, temp2, h - 0.3333))
       }
 
       return [r, g, b];
@@ -53,8 +53,8 @@ export class Glow {
   }
  
   hexToHsl(hex) {
-    var rgb = hexToRgb(hex)
-    return rgbToHsl(rgb)
+    var rgb = this.hexToRgb(hex)
+    return this.rgbToHsl(rgb)
   }
   
   hslToDegPercPerc(hsl) {
