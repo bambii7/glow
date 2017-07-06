@@ -11,8 +11,6 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 var Glow = exports.Glow = function () {
     function Glow() {
         _classCallCheck(this, Glow);
-
-        this.cache = {};
     }
 
     _createClass(Glow, [{
@@ -136,7 +134,7 @@ var Glow = exports.Glow = function () {
                 }
             }
 
-            return hslToDegPercPerc([h, s, l]);
+            return this.hslToDegPercPerc([h, s, l]);
         }
     }, {
         key: 'hexToRgb',

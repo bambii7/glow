@@ -2,9 +2,7 @@
 
 export class Glow {
   
-  constructor() {
-    this.cache = {}
-  }
+  constructor() {}
   
   hslToRgb(hsl){
       var h, s, l,
@@ -111,7 +109,7 @@ export class Glow {
         }
     }
 
-    return hslToDegPercPerc([h, s, l])
+    return this.hslToDegPercPerc([h, s, l])
   }
   
   hexToRgb(hexValue) {
