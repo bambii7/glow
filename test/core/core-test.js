@@ -4,6 +4,8 @@ const it         = require('mocha').it
 const expect     = require('chai').expect
 var Glow       = require('../../build/glow-v1.0.0').Glow
 
+var hex_colours = ['#09C', '#EBEBEB', '#640c5a', '#ea5896', '#359ea7', '#FFF', '#000']
+
 describe('hexToRgb', function () {
 
   it('should convert hex to rgb values', function () {
@@ -40,6 +42,8 @@ describe('rgbToHsl', function () {
     let glow = new Glow()
     let hex = glow.hexToHsl('#EBEBEB')
     expect(hex).to.deep.equal([0, 0, 92])
+//    hex = glow.hexToHsl('#640c5a')
+//    expect(hex).to.deep.equal([0, 0, 92])
   })
   
   it('should convert hsl to rbg values', function () {

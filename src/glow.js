@@ -146,16 +146,3 @@ export class Glow {
 }
 
 module.exports.Glow
-
-//var t = hexToHsl('#359ea7')
-//var m = hslToRgb(t);
-//console.log('#359ea7', 'hsl(185, 52%, 43%)', t, m)
-//
-//var t = hexToHsl('#640c5a')
-//console.log('#640c5a', 'hsl(307, 79%, 22%)', t)
-//
-//var t = hexToHsl('#e5aa6f')
-//console.log('#e5aa6f', 'hsl(30, 69%, 67%)', t)
-//
-//var t = hexToHsl('#ea5896')
-//console.log('#ea5896', 'hsl(335, 78%, 63%)', t)
