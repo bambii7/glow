@@ -18,9 +18,9 @@ export class Glow {
 
       // greyscale
       if (s == 0) {
-          r = l * 255
-          g = l * 255
-          b = l * 255
+          r = Math.round(l * 255)
+          g = Math.round(l * 255)
+          b = Math.round(l * 255)
       } else {
           temp2 = (l < 0.5) ? l * (1 + s) : (l + s) - (s * l)
           temp1 = 2 * l - temp2
@@ -29,8 +29,7 @@ export class Glow {
           g = Math.round(255 * this.hueToRgb(temp1, temp2, h))
           b = Math.round(255 * this.hueToRgb(temp1, temp2, h - 0.3333))
       }
-
-      return [r, g, b];
+      return [parseInt(r), parseInt(g), parseInt(b)];
   }
   
   hueToRgb(temp1, temp2, hue) {
@@ -55,7 +54,7 @@ export class Glow {
   hexToHsl(hex) {
     var rgb = this.hexToRgb(hex)
     return this.rgbToHsl(rgb)
-  }
+  } 
   
   hslToDegPercPerc(hsl) {
     hsl[0] = Math.round(hsl[0] * 60)

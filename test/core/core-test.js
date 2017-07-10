@@ -42,4 +42,11 @@ describe('rgbToHsl', function () {
     expect(hsl).to.deep.equal([0, 0, 92])
   })
   
+  it('should convert hsl to rbg values', function () {
+    let glow = new Glow()
+    let rgb = glow.hslToRgb([0, 0, 92])
+    console.log(rgb)
+    expect(rgb).to.deep.equal([235, 235, 235])
+  })
+  
 });

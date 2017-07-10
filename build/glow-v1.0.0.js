@@ -27,9 +27,9 @@ var Glow = exports.Glow = function () {
 
             // greyscale
             if (s == 0) {
-                r = l * 255;
-                g = l * 255;
-                b = l * 255;
+                r = Math.round(l * 255);
+                g = Math.round(l * 255);
+                b = Math.round(l * 255);
             } else {
                 temp2 = l < 0.5 ? l * (1 + s) : l + s - s * l;
                 temp1 = 2 * l - temp2;
@@ -38,8 +38,8 @@ var Glow = exports.Glow = function () {
                 g = Math.round(255 * this.hueToRgb(temp1, temp2, h));
                 b = Math.round(255 * this.hueToRgb(temp1, temp2, h - 0.3333));
             }
-
-            return [r, g, b];
+            console.log([r, g, b]);
+            return [parseInt(r), parseInt(g), parseInt(b)];
         }
     }, {
         key: 'hueToRgb',
