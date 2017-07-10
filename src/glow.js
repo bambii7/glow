@@ -56,6 +56,11 @@ export class Glow {
     return this.rgbToHsl(rgb)
   } 
   
+  hslToHex(hsl) {
+    var rgb = this.hslToRgb(hsl)
+    return this.rgbToHex(rgb)
+  }
+  
   hslToDegPercPerc(hsl) {
     hsl[0] = Math.round(hsl[0] * 60)
     if (hsl[0] < 0) {

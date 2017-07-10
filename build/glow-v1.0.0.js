@@ -70,6 +70,12 @@ var Glow = exports.Glow = function () {
             return this.rgbToHsl(rgb);
         }
     }, {
+        key: 'hslToHex',
+        value: function hslToHex(hsl) {
+            var rgb = this.hslToRgb(hsl);
+            return this.rgbToHex(rgb);
+        }
+    }, {
         key: 'hslToDegPercPerc',
         value: function hslToDegPercPerc(hsl) {
             hsl[0] = Math.round(hsl[0] * 60);
