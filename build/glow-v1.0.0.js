@@ -38,7 +38,6 @@ var Glow = exports.Glow = function () {
                 g = Math.round(255 * this.hueToRgb(temp1, temp2, h));
                 b = Math.round(255 * this.hueToRgb(temp1, temp2, h - 0.3333));
             }
-            console.log([r, g, b]);
             return [parseInt(r), parseInt(g), parseInt(b)];
         }
     }, {
@@ -135,6 +134,13 @@ var Glow = exports.Glow = function () {
             }
 
             return this.hslToDegPercPerc([h, s, l]);
+        }
+    }, {
+        key: 'rgbToHex',
+        value: function rgbToHex(rgb) {
+            return rgb.map(function (v) {
+                return v.toString(16);
+            }).join('').toUpperCase();
         }
     }, {
         key: 'hexToRgb',

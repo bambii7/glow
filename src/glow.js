@@ -111,6 +111,12 @@ export class Glow {
     return this.hslToDegPercPerc([h, s, l])
   }
   
+  rgbToHex(rgb) {
+    return rgb.map(function (v) {
+      return v.toString(16)
+    }).join('').toUpperCase()
+  }
+  
   hexToRgb(hexValue) {
     let hex = this.stringToHex(hexValue)
     if (hex === null || hexValue === undefined) {

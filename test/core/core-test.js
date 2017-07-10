@@ -38,8 +38,8 @@ describe('rgbToHsl', function () {
 
   it('should convert hex to hsl values', function () {
     let glow = new Glow()
-    let hsl = glow.hexToHsl('#EBEBEB')
-    expect(hsl).to.deep.equal([0, 0, 92])
+    let hex = glow.hexToHsl('#EBEBEB')
+    expect(hex).to.deep.equal([0, 0, 92])
   })
   
   it('should convert hsl to rbg values', function () {
@@ -47,6 +47,16 @@ describe('rgbToHsl', function () {
     let rgb = glow.hslToRgb([0, 0, 92])
     console.log(rgb)
     expect(rgb).to.deep.equal([235, 235, 235])
+  })
+  
+});
+
+describe('rgbToHex', function () {
+
+  it('should convert rgb to hex values', function () {
+    let glow = new Glow()
+    let rgb = glow.rgbToHex([235, 235, 235])
+    expect(rgb).to.equal('EBEBEB')
   })
   
 });
