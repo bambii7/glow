@@ -1,3 +1,12 @@
+engines:
+  eslint:
+    enabled: true
+  duplication:
+    enabled: true
+    config:
+      languages:
+      - javascript:
+      
 ## exclude src folder from codeclimate
 exclude_paths:
 - "src/"
