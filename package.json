@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "mocha 'test/**/*-test.js'"
+    "test": "nyc --reporter=lcov --reporter=text-lcov mocha 'test/**/*-test.js'"
   },
   "repository": {
     "type": "git",
@@ -27,6 +27,7 @@
     "grunt-cli": "~0.1.7",
     "grunt-contrib-concat": "~0.3.0",
     "grunt-contrib-uglify": "~0.4.0",
-    "mocha": "^3.4.2"
+    "mocha": "^3.4.2",
+    "nyc": "^11.0.3"
   }
 }
