@@ -7,6 +7,10 @@ engines:
       languages:
       - javascript:
       
+ratings:
+  paths:
+  - build/**
+  
 ## exclude src folder from codeclimate
 exclude_paths:
 - "src/"
