@@ -2,7 +2,7 @@
 JS colour
 
 
-TODO:
+### TODO
 
 * Add palette generation 
 * Support string representations of RGB & HSL
