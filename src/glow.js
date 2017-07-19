@@ -29,7 +29,7 @@ export class Glow {
           g = Math.round(255 * this.hueToRgb(temp1, temp2, h))
           b = Math.round(255 * this.hueToRgb(temp1, temp2, h - 0.3333))
       }
-      return [parseInt(r), parseInt(g), parseInt(b)];
+      return [parseInt(r, 10), parseInt(g, 10), parseInt(b, 10)];
   }
   
   hueToRgb(temp1, temp2, hue) {
