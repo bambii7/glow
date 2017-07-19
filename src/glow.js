@@ -17,7 +17,7 @@ export class Glow {
       l = hsl[2]
 
       // greyscale
-      if (s == 0) {
+      if (s === 0) {
           r = Math.round(l * 255)
           g = Math.round(l * 255)
           b = Math.round(l * 255)
@@ -93,7 +93,7 @@ export class Glow {
     maxSub = max - min
     l = maxAdd / 2
 
-    if (min != max) {
+    if (min !== max) {
         if (l < 0.5) {
             s = maxSub / maxAdd
         } else {
