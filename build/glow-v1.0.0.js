@@ -26,7 +26,7 @@ var Glow = exports.Glow = function () {
             l = hsl[2];
 
             // greyscale
-            if (s == 0) {
+            if (s === 0) {
                 r = Math.round(l * 255);
                 g = Math.round(l * 255);
                 b = Math.round(l * 255);
@@ -38,7 +38,7 @@ var Glow = exports.Glow = function () {
                 g = Math.round(255 * this.hueToRgb(temp1, temp2, h));
                 b = Math.round(255 * this.hueToRgb(temp1, temp2, h - 0.3333));
             }
-            return [parseInt(r), parseInt(g), parseInt(b)];
+            return [parseInt(r, 10), parseInt(g, 10), parseInt(b, 10)];
         }
     }, {
         key: 'hueToRgb',
@@ -116,7 +116,7 @@ var Glow = exports.Glow = function () {
             maxSub = max - min;
             l = maxAdd / 2;
 
-            if (min != max) {
+            if (min !== max) {
                 if (l < 0.5) {
                     s = maxSub / maxAdd;
                 } else {
@@ -178,19 +178,4 @@ var Glow = exports.Glow = function () {
 
     return Glow;
 }();
-
-module.exports.Glow;
-
-//var t = hexToHsl('#359ea7')
-//var m = hslToRgb(t);
-//console.log('#359ea7', 'hsl(185, 52%, 43%)', t, m)
-//
-//var t = hexToHsl('#640c5a')
-//console.log('#640c5a', 'hsl(307, 79%, 22%)', t)
-//
-//var t = hexToHsl('#e5aa6f')
-//console.log('#e5aa6f', 'hsl(30, 69%, 67%)', t)
-//
-//var t = hexToHsl('#ea5896')
-//console.log('#ea5896', 'hsl(335, 78%, 63%)', t)
 //# sourceMappingURL=glow-v1.0.0.js.map

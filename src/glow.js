@@ -144,5 +144,3 @@ export class Glow {
   }
   
 }
-
-module.exports.Glow
