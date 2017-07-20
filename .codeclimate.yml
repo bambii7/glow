@@ -6,7 +6,9 @@ engines:
     config:
       languages:
       - javascript:
-      
+  git-legal:
+    enabled: true
+    
 ratings:
   paths:
   - "src/**"
