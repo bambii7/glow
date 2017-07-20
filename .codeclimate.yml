@@ -13,5 +13,5 @@ ratings:
   
 ## exclude src folder from codeclimate
 exclude_paths:
-- "src/"
+- "build/"
 - "test/"
