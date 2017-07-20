@@ -9,8 +9,9 @@ engines:
       
 ratings:
   paths:
-  - build/**
+  - "src/**"
   
 ## exclude src folder from codeclimate
 exclude_paths:
+- "build/**"
 - "test/"
