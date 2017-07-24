@@ -4,7 +4,7 @@
 module.exports = function(grunt) {
     //Configuration.
     grunt.initConfig({
-        pkg: grunt.file.readJSON('package.json') ,
+        pkg: grunt.file.readJSON('package.json'),
 
         // watch
         watch: {
@@ -20,7 +20,7 @@ module.exports = function(grunt) {
                 separator: ';'
             },
             dist: {
-                src: ['src/*.js'],
+                src: ['src/*.js', 'src/**/*.js'],
                 dest: 'build/<%= pkg.name %>-v<%= pkg.version %>.js'
             }
         },
@@ -47,6 +47,13 @@ module.exports = function(grunt) {
                     'build/<%= pkg.name %>-v<%= pkg.version %>.js': 'build/<%= pkg.name %>-v<%= pkg.version %>.js'
                 }
             }
+        },
+      
+        browserify: {
+            client: {
+                src: 'build/<%= pkg.name %>-v<%= pkg.version %>.js',
+                dest: 'build/<%= pkg.name %>-v<%= pkg.version %>.js'
+            }
         }
 
     });
@@ -54,11 +61,12 @@ module.exports = function(grunt) {
     //Dependencies.
     grunt.loadNpmTasks('grunt-contrib-concat');
     grunt.loadNpmTasks('grunt-contrib-uglify');
-    grunt.loadNpmTasks('grunt-contrib-watch');
+//    grunt.loadNpmTasks('grunt-contrib-watch');
     grunt.loadNpmTasks('grunt-babel');
+    grunt.loadNpmTasks('grunt-browserify');
 
     //Tasks.
     grunt.registerTask('default', ['watch']);
-    grunt.registerTask('build', ['concat', 'babel', 'uglify']);
+    grunt.registerTask('build', ['concat', 'browserify:client', 'babel', 'uglify']);
 
 };
