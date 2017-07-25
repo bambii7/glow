@@ -1,6 +1,4 @@
-
-
-export class Glow {
+module.export.Glow = class Glow {
   
   constructor() {}
   
