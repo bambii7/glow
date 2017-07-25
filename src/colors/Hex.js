@@ -1,4 +1,4 @@
-var Color = require('Color').Color
+var Color = require('./Color')
 
 module.export.Hex = class Hex extends Color {
   toString() {

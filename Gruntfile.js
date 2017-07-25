@@ -51,8 +51,8 @@ module.exports = function(grunt) {
       
         browserify: {
             client: {
-                src: 'build/<%= pkg.name %>-v<%= pkg.version %>.js',
-                dest: 'build/<%= pkg.name %>-v<%= pkg.version %>.js'
+                src: 'src/glow.js',
+                dest: 'build/<%= pkg.name %>-v-<%= pkg.version %>.js'
             }
         }
 
@@ -67,6 +67,6 @@ module.exports = function(grunt) {
 
     //Tasks.
     grunt.registerTask('default', ['watch']);
-    grunt.registerTask('build', ['concat', 'browserify:client', 'babel', 'uglify']);
+    grunt.registerTask('build', ['browserify:client', 'babel', 'uglify']);
 
 };

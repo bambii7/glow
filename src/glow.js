@@ -1,3 +1,6 @@
+var Hex = require('./colors/Hex.js')
+
+
 module.export.Glow = class Glow {
   
   constructor() {}
