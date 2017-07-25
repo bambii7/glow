@@ -14,17 +14,6 @@ module.exports = function(grunt) {
             }
         },
 
-        // compress
-        concat: {
-            options: {
-                separator: ';'
-            },
-            dist: {
-                src: ['src/*.js', 'src/**/*.js'],
-                dest: 'build/<%= pkg.name %>-v<%= pkg.version %>.js'
-            }
-        },
-
         // ugly, exporting to min folder for individual size ref
         uglify: {
             options: {
@@ -59,9 +48,7 @@ module.exports = function(grunt) {
     });
 
     //Dependencies.
-    grunt.loadNpmTasks('grunt-contrib-concat');
     grunt.loadNpmTasks('grunt-contrib-uglify');
-//    grunt.loadNpmTasks('grunt-contrib-watch');
     grunt.loadNpmTasks('grunt-babel');
     grunt.loadNpmTasks('grunt-browserify');
 
