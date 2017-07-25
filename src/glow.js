@@ -8,7 +8,7 @@ module.export.Glow = class Glow {
   hslToRgb(hsl) {
       var h, s, l,
           r, g, b,
-          temp1, temp2;
+          temp1, temp2
       // clone array
       hsl = hsl.slice(0)
 
@@ -30,11 +30,11 @@ module.export.Glow = class Glow {
           g = Math.round(255 * this.hueToRgb(temp1, temp2, h))
           b = Math.round(255 * this.hueToRgb(temp1, temp2, h - 0.3333))
       }
-      return [parseInt(r, 10), parseInt(g, 10), parseInt(b, 10)];
+      return [parseInt(r, 10), parseInt(g, 10), parseInt(b, 10)]
   }
   
   hueToRgb(temp1, temp2, hue) {
-      var rgbValue = 0;
+      var rgbValue = 0
       if (hue < 0) {
           hue += 1
       }
@@ -49,7 +49,7 @@ module.export.Glow = class Glow {
       } else if (3 * hue < 2 ) { // blue
           rgbValue = temp1 + (temp2 - temp1) * (0.6666 - hue) * 6
       }
-      return rgbValue;
+      return rgbValue
   }
  
   hexToHsl(hex) {
@@ -74,11 +74,11 @@ module.export.Glow = class Glow {
   }
 
   degPercPercToHsl(hsl) {
-    hsl[0] /= 360;
-    hsl[1] /= 100;
-    hsl[2] /= 100;
+    hsl[0] /= 360
+    hsl[1] /= 100
+    hsl[2] /= 100
 
-    return hsl;
+    return hsl
   }
   
   rgbToHsl(rgb) {
