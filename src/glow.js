@@ -5,7 +5,7 @@ module.export.Glow = class Glow {
   
   constructor() {}
   
-  hslToRgb(hsl){
+  hslToRgb(hsl) {
       var h, s, l,
           r, g, b,
           temp1, temp2;
