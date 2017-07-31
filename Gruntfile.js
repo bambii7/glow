@@ -33,7 +33,7 @@ module.exports = function(grunt) {
             },
             dist: {
                 files: {
-                    'build/<%= pkg.name %>-v<%= pkg.version %>.js': 'build/<%= pkg.name %>-v<%= pkg.version %>.js'
+                    'build/b.js': 'build/bundle.js'
                 }
             }
         },

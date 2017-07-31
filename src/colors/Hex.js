@@ -1,6 +1,7 @@
-var Color = require('./Color')
+//var Color = require('./Color')
+import Color from './Color'
 
-module.export.Hex = class Hex extends Color {
+export default class Hex extends Color {
   toRgb() {
     
   }

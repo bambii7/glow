@@ -1,7 +1,10 @@
-var Hex = require('./colors/Hex.js')
+require("babel-register");
+
+//var Hex = require('./colors/Hex.js')
+import Hex from './colors/Hex'
 
 
-module.export.Glow = class Glow {
+export default class Glow {
   
   constructor() {}
   

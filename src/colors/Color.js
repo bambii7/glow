@@ -1,4 +1,4 @@
-module.export.Color = class Color {
+export default class Color {
   toString() {
     return "Color"
   }
