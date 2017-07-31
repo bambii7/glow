@@ -4,7 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "nyc --reporter=lcov --reporter=text-lcov mocha 'test/**/*-test.js'"
+    "test": "nyc --reporter=lcov --reporter=text-lcov mocha 'test/**/*-test.js'",
+    "build": "./node_modules/.bin/webpack --config webpack.config.js"
   },
   "repository": {
     "type": "git",
