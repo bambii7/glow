@@ -4,7 +4,7 @@ require("babel-register");
 import Hex from './colors/Hex'
 
 
-export default class Glow {
+class Glow {
   
   constructor() {}
   
@@ -148,3 +148,5 @@ export default class Glow {
   }
   
 }
+
+export { Glow };
