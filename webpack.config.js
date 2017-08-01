@@ -5,7 +5,9 @@ module.exports = {
   entry: './src/glow.js',
   output: {
     filename: 'glow.js',
-    path: path.resolve(__dirname, 'build')
+    path: path.resolve(__dirname, 'build'),
+    libraryTarget: 'umd',
+    umdNamedDefine: true
   },
   module: {
     loaders: [
@@ -17,14 +19,11 @@ module.exports = {
       }
     }
     ]
-  },
-  stats: {
-    colors: true
-  },
-    plugins: [
-    new webpack.optimize.UglifyJsPlugin({
-     minimize: true,
-     compress: false
-    })
-  ]
+  }
+//    plugins: [
+//    new webpack.optimize.UglifyJsPlugin({
+//     minimize: false,
+//     compress: false
+//    })
+//  ]
 };
