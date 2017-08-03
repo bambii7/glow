@@ -4,7 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "nyc --reporter=lcov --reporter=text-lcov mocha 'test/**/*-test.js'",
+    "test": "mocha 'test/**/*-test.js'",
+    "cover": "codeclimate-test-reporter before-build && nyc --reporter=lcov --reporter=text-lcov mocha 'test/**/*-test.js' && CODECLIMATE_REPO_TOKEN=$CODE_CLIMATE_COVER_GLOW codeclimate-test-reporter 'coverage/lcov.info' && codeclimate-test-reporter after-build --exit-code $?",
     "build": "./node_modules/.bin/webpack --config webpack.config.js"
   },
   "repository": {
