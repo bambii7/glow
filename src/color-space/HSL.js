@@ -60,11 +60,11 @@ export default class HSL extends Color {
       }
 
       if (6 * hue < 1 ) { // red
-          rgbValue = temp1 + (temp2 - temp1) * 6 * hue
+        rgbValue = temp1 + (temp2 - temp1) * 6 * hue
       } else if (2 * hue < 1 ) { // green
-          rgbValue = temp2
+        rgbValue = temp2
       } else if (3 * hue < 2 ) { // blue
-          rgbValue = temp1 + (temp2 - temp1) * (0.6666 - hue) * 6
+        rgbValue = temp1 + (temp2 - temp1) * (0.6666 - hue) * 6
       }
       return rgbValue
   }

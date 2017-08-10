@@ -38,7 +38,7 @@ export default class RGB extends Color {
     let max = 0, min = 0, maxAdd = 0, maxSub = 0,
         h=0, s=0, l=0, hsl
 
-    let rgb = this.value.map(function (v) {
+    let rgb = this.value.map((v) => {
         return v / 255
     })
     max = Math.max.apply(null, rgb)

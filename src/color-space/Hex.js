@@ -1,7 +1,7 @@
 import Color from './Color'
 import RGB from './RGB'
 
-var hexRegex = /[A-Fa-f0-9]{6}|[A-Fa-f0-9]{3}/
+const hexRegex = /[A-F0-9]{6}|[A-F0-9]{3}/i
 
 export default class Hex extends Color {
   
@@ -29,7 +29,7 @@ export default class Hex extends Color {
   
   toRgb() {
     let hex = this.value.match(/.{1,2}/g)
-    let rgb = hex.map(function (v) {
+    let rgb = hex.map((v) => {
         return parseInt(v, 16)
     })
     return new RGB(rgb)
