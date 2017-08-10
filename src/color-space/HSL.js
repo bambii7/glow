@@ -5,6 +5,9 @@ export default class HSL extends Color {
   
   constructor(str = '') {
     super()
+    if (!HSL.isValid(str)) {
+      throw "not a valid hex value"
+    }
     this.value = str
   }
   
@@ -74,6 +77,11 @@ export default class HSL extends Color {
     hsl[1] /= 100
     hsl[2] /= 100
     return hsl
+  }
+  
+  static isValid(str) {
+    let regex = /(\d+),(\d+),(\d+)/
+    return regex.test(str)
   }
   
 }
