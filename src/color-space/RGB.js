@@ -6,6 +6,9 @@ export default class RGB extends Color {
   
   constructor(str = '') {
     super()
+    if (!RGB.isValid(str)) {
+      throw "not a valid rgb value"
+    }
     this.value = str
   }
   
