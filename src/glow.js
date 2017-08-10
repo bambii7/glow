@@ -1,9 +1,9 @@
 require("babel-register");
 
 //var Hex = require('./colors/Hex.js')
-import Hex from './colors/Hex'
-import RGB from './colors/RGB'
-import HSL from './colors/HSL'
+import Hex from './color-space/Hex'
+import RGB from './color-space/RGB'
+import HSL from './color-space/HSL'
 
 class Glow {
  
