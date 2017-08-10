@@ -127,26 +127,11 @@ class Glow {
   }
   
   hexToRgb(hexValue) {
-    let hex = this.stringToHex(hexValue)
-    if (hex === null || hexValue === undefined) {
-      throw "not a valid hex value"
-    }
-    hex = hex.match(/.{1,2}/g)
-    return hex.map(function (v) {
-      return parseInt(v, 16)
-    })
+
   }
   
-  expandShortHex(shortHex) {
-    return shortHex.split('').map((v) => {return v+v}).join('')
-  }
-  
-  stringToHex(hexString) {
-    let hex = /[A-Fa-f0-9]{6}|[A-Fa-f0-9]{3}/.exec(hexString)[0]
-    hex = hex.length === 3 ? this.expandShortHex(hex) : hex
-    return hex
-  }
+
   
 }
 
-export { Glow };
+export { Glow, Hex };
