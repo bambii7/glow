@@ -1,6 +1,12 @@
-var Color = require('./Color')
+import Color from './Color'
 
-module.export.RGB = class Color {
+export default class RGB extends Color {  
+  
+  constructor(str = '') {
+    super()
+    this.value = str
+  }
+  
   toHex() {
     
   }
@@ -8,6 +14,7 @@ module.export.RGB = class Color {
     
   }
   toString() {
-    return "RGB"
+    return 'rgb(' + this.value.join(',') + ')'
   }
+  
 }
