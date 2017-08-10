@@ -23,14 +23,10 @@ describe('HSL', () => {
     expect(hex.toString()).to.equal('#EBEBEB')
   })
   
-  it('should throw an error with in valid input', () => {
-    let fn = function () {
-      new HSL('ZZZ')
-    }
+  it('should throw an error if invalid hsl', () => {
+    let fn = () => { new HSL('ZZZ') }
     expect(fn).to.throw()
-    fn = function () {
-      new HSL('#EBEBEB')
-    }
+    fn = () => { new HSL('#EBEBEB') }
     expect(fn).to.throw()
   })  
   

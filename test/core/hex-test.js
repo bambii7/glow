@@ -36,9 +36,7 @@ describe('Hex', function () {
   })
   
   it('should throw an error if invalid hex', function () {
-    var fn = function () {
-      let hex = new Hex('ZZZ')
-    }
+    var fn = () => { let hex = new Hex('ZZZ') }
     expect(fn).to.throw()
   })
   

@@ -22,4 +22,11 @@ describe('RGB', () => {
     expect(hsl.toString()).to.equal('hsl(0,0,92)')
   })
   
+  it('should throw an error if invalid rgb', () => {
+    let fn = () => { new RGB('ZZZ') }
+    expect(fn).to.throw()
+    fn = () => { new RGB('#EBEBEB') }
+    expect(fn).to.throw()
+  })  
+  
 })
