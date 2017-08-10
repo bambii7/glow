@@ -1,11 +1,13 @@
 //var Color = require('./Color')
 import Color from './Color'
 
+var hexRegex = /[A-Fa-f0-9]{6}|[A-Fa-f0-9]{3}/
+
 export default class Hex extends Color {
   
   constructor(str = '') {
     super()
-    if (!this._isValid(str)) {
+    if (!Hex.isValid(str)) {
       throw "not a valid hex value"
     }
     this.value = this._stringToHex(str)
@@ -16,13 +18,13 @@ export default class Hex extends Color {
   }
   
   _stringToHex(str) {
-    let hex = /[A-Fa-f0-9]{6}|[A-Fa-f0-9]{3}/.exec(str)[0]
+    let hex = hexRegex.exec(str)[0]
     hex = hex.length === 3 ? this._expandShortHex(hex) : hex
     return hex
   }
   
-  _isValid(str) {
-    return /[A-Fa-f0-9]{6}|[A-Fa-f0-9]{3}/.test(str)
+  static isValid(str) {
+    return hexRegex.test(str)
   }
   
   toRgb() {
