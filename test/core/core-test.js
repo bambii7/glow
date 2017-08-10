@@ -1,5 +1,5 @@
 "use strict"
-const describe   = require('mocha').describe;
+const describe   = require('mocha').describe
 const it         = require('mocha').it
 const expect     = require('chai').expect
 var Glow       = require('../../build/glow').Glow
