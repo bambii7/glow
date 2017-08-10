@@ -1,6 +1,7 @@
-var Color = require('./Color')
+import Color from './Color'
 
-module.export.HSL = class Color {
+export default class HSL extends Color {  
+
   toRgb() {
     
   }
