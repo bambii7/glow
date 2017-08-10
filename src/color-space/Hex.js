@@ -40,7 +40,7 @@ export default class Hex extends Color {
   }
   
   toString() {
-    return '#' + this.value
+    return `#${this.value}`
   }
   
 }
