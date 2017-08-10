@@ -17,7 +17,8 @@ export default class RGB extends Color {
   }
 
   toString() {
-    return 'rgb(' + this.value.join(',') + ')'
+    let rgb = super.toString()
+    return `rgb(${rgb})`
   }
   
   toDegPercPerc(hsl) {

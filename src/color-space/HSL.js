@@ -16,7 +16,8 @@ export default class HSL extends Color {
   }
   
   toString() {
-    return 'hsl(' + this.value.join(',') + ')'
+    let hsl = super.toString()
+    return `hsl(${hsl})`
   }
   
   toRgb() {
