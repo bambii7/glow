@@ -8,16 +8,16 @@ export default class Hex extends Color {
     if (str === null || str === undefined) {
       throw "not a valid hex value"
     }
-    this.value = this.stringToHex(str)
+    this.value = this._stringToHex(str)
   }
   
-  expandShortHex(shortHex) {
+  _expandShortHex(shortHex) {
     return shortHex.split('').map((v) => {return v+v}).join('')
   }
   
-  stringToHex(str) {
+  _stringToHex(str) {
     let hex = /[A-Fa-f0-9]{6}|[A-Fa-f0-9]{3}/.exec(str)[0]
-    hex = hex.length === 3 ? this.expandShortHex(hex) : hex
+    hex = hex.length === 3 ? this._expandShortHex(hex) : hex
     return hex
   }
   
