@@ -29,4 +29,8 @@ describe('RGB', () => {
     expect(fn).to.throw()
   })  
   
+  it('should validate strings as rgb', () => {
+    expect(HSL.isValid('rgb(255,0,100)')).to.equal(true)
+  })
+  
 })
