@@ -15,4 +15,8 @@ export default class Color {
     return "Color"
   }
   
+  toArray() {
+    return this.value
+  }
+  
 }

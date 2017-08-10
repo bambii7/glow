@@ -19,10 +19,6 @@ export default class HSL extends Color {
     return 'hsl(' + this.value.join(',') + ')'
   }
   
-  toArray() {
-    return this.value
-  }
-  
   toRgb() {
       let h, s, l,
           r, g, b,

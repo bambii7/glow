@@ -20,10 +20,6 @@ export default class RGB extends Color {
     return 'rgb(' + this.value.join(',') + ')'
   }
   
-  toArray() {
-    return this.value
-  }
-  
   toDegPercPerc(hsl) {
     hsl[0] = Math.round(hsl[0] * 60)
     if (hsl[0] < 0) {
