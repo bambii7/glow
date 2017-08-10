@@ -10,14 +10,14 @@ export default class Hex extends Color {
     if (!Hex.isValid(str)) {
       throw "not a valid hex value"
     }
-    this.value = this._stringToHex(str)
+    this.value = this._parseString(str)
   }
   
   _expandShortHex(shortHex) {
     return shortHex.split('').map((v) => {return v+v}).join('')
   }
   
-  _stringToHex(str) {
+  _parseString(str) {
     let hex = hexRegex.exec(str)[0]
     hex = hex.length === 3 ? this._expandShortHex(hex) : hex
     return hex
