@@ -36,11 +36,11 @@ export default class Hex extends Color {
   }
   
   toHsl() {
-    
+    return this.toRgb().toHsl()
   }
   
   toString() {
-    return this.value
+    return '#' + this.value
   }
   
 }
