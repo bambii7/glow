@@ -1,5 +1,5 @@
-//var Color = require('./Color')
 import Color from './Color'
+import RGB from './RGB'
 
 var hexRegex = /[A-Fa-f0-9]{6}|[A-Fa-f0-9]{3}/
 
@@ -29,9 +29,10 @@ export default class Hex extends Color {
   
   toRgb() {
     let hex = this.value.match(/.{1,2}/g)
-    return hex.map(function (v) {
+    let rgb = hex.map(function (v) {
         return parseInt(v, 16)
     })
+    return new RGB(rgb)
   }
   
   toHsl() {
