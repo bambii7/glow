@@ -6,6 +6,17 @@ export default class Color {
     this.value = Color.isValid(str) ? Color.parseString(str) : null
   }
   
+  get value() {
+    return this._value
+  }
+  
+  set value(arr) {
+//    if (!Array.isArray(arr)) {
+//      throw "value must be an array"
+//    }
+    this._value = arr
+  }
+  
   static parseString(str) {
     let res = regex.exec(str)
     this.value = res.shift().slice(0)

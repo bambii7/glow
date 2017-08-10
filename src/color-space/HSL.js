@@ -6,7 +6,7 @@ export default class HSL extends Color {
   constructor(str = '') {
     super()
     if (!HSL.isValid(str)) {
-      throw "not a valid hex value"
+      throw "not a valid hsl value"
     }
     this.value = str
   }
