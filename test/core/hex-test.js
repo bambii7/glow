@@ -12,12 +12,20 @@ describe('Hex', function () {
     expect(rgb).to.deep.equal([53, 158, 167])
   })
   
-//  it('should expand 3 digit hex values', function () {
+//    it('should convert hex to hsl values', function () {
 //    let glow = new Glow()
-//    let expanded = glow.stringToHex('#09C')
-//    expect(expanded).to.deep.equal('0099CC')
-//  })  
-//  
+//    let hex = glow.hexToHsl('#EBEBEB')
+//    expect(hex).to.deep.equal([0, 0, 92])
+////    hex = glow.hexToHsl('#640c5a')
+////    expect(hex).to.deep.equal([0, 0, 92])
+//  })
+  
+  it('should expand 3 digit hex values', function () {
+    let hex = new Hex('#09C')
+    let expanded = hex.toString()
+    expect(expanded).to.deep.equal('0099CC')
+  })  
+  
 //  it('should not expand 6 digit hex values', function () {
 //    let glow = new Glow()
 //    let expanded = glow.stringToHex('#0099CC')
