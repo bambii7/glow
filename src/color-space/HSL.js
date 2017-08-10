@@ -79,10 +79,5 @@ export default class HSL extends Color {
     return hsl
   }
   
-  static isValid(str) {
-    let regex = /(\d+),(\d+),(\d+)/
-    return regex.test(str)
-  }
-  
 }
 
