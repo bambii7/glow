@@ -39,4 +39,13 @@ describe('Hex', function () {
     expect(fn).to.throw()
   })
   
+  it('should validate strings as hex', () => {
+    let hex = new Hex('#0099CC')
+    expect(hex._isValid('#0099CC')).to.equal(true)
+    expect(hex._isValid('#000000')).to.equal(true)
+    expect(hex._isValid('#FFFFFF')).to.equal(true)
+    expect(hex._isValid('#ZZZZZZ')).to.equal(false)
+    expect(hex._isValid('#}{@}')).to.equal(false)
+  })
+  
 });
