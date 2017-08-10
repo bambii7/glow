@@ -126,12 +126,6 @@ class Glow {
     }).join('').toUpperCase()
   }
   
-  hexToRgb(hexValue) {
-
-  }
-  
-
-  
 }
 
 export { Glow, Hex };

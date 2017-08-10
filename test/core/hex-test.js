@@ -6,10 +6,10 @@ var Hex       = require('../../build/glow').Hex
 
 describe('Hex', function () {
 
-  it('should convert hex to rgb values', function () {
+  it('should convert to rgb values', function () {
     let hex = new Hex('#359ea7')
     let rgb = hex.toRgb()
-    expect(rgb).to.deep.equal([53, 158, 167])
+    expect(rgb.toString()).to.equal('rgb(53,158,167)')
   })
   
 //    it('should convert hex to hsl values', function () {
