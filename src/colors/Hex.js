@@ -33,7 +33,7 @@ export default class Hex extends Color {
   }
   
   toString() {
-    return "Hex Color"
+    return this.value
   }
   
 }
