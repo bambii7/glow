@@ -43,6 +43,14 @@ describe('HSL', () => {
   it('should be able to parse string representation', () => {
     let hsl = new HSL('hsl(236,100,73)')
     expect(hsl.toArray()).to.deep.equal([236, 100, 73])
+  })  
+  
+  it('should be able to adjust the hue value', () => {
+    let hsl = new HSL('hsl(236,100,73)')
+    hsl.hue = -180
+    expect(hsl.toArray()).to.deep.equal([56, 100, 73])
+    hsl.hue = 90
+    expect(hsl.toArray()).to.deep.equal([146, 100, 73])
   })
   
 })
