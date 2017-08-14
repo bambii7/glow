@@ -3,27 +3,28 @@ const regex = /(\d+),(\d+),(\d+)/
 export default class Color {
   
   constructor(str = '') {
-    this.value = Color.isValid(str) ? Color.parseString(str) : null
+    if (!this.isValid(str)) {
+      throw "not a valid value"
+    }
+    this.value = str
   }
   
   get value() {
     return this._value
   }
   
-  set value(arr) {
-//    if (!Array.isArray(arr)) {
-//      throw "value must be an array"
-//    }
-    this._value = arr
+  set value(val) {
+    this._value =  Array.isArray(val) ? val : this.parseString(val)
   }
   
-  static parseString(str) {
+  parseString(str) {
     let res = regex.exec(str)
-    this.value = res.shift().slice(0)
+    res.shift()
+    return res.map((v) => {return parseInt(v)})
   }
   
-  static isValid(str) {
-    return regex.test(str)
+  isValid(str) {
+    return regex.test(str) || (Array.isArray(str) && str.length === 3)
   }
   
   toString() {
