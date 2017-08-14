@@ -3,14 +3,6 @@ import RGB from './RGB'
 
 export default class HSL extends Color {
   
-  constructor(str = '') {
-    super()
-    if (!HSL.isValid(str)) {
-      throw "not a valid hsl value"
-    }
-    this.value = str
-  }
-  
   toHex() {
     return this.toRgb().toHex()
   }
@@ -27,7 +19,6 @@ export default class HSL extends Color {
       
       // clone array
       hsl = this.value.slice(0)
-
       hsl = this.degPercPercToHsl(hsl)
       h = hsl[0]
       s = hsl[1]

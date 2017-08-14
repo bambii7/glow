@@ -4,14 +4,6 @@ import Hex from './Hex'
 
 export default class RGB extends Color {  
   
-  constructor(str = '') {
-    super()
-    if (!RGB.isValid(str)) {
-      throw "not a valid rgb value"
-    }
-    this.value = str
-  }
-  
   toHex() {
     let hex = this.value.map(function (v) {
       return v.toString(16)
