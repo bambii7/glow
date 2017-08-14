@@ -41,11 +41,12 @@ describe('Hex', function () {
   })
   
   it('should validate strings as hex', () => {
-    expect(Hex.isValid('#0099CC')).to.equal(true)
-    expect(Hex.isValid('#000000')).to.equal(true)
-    expect(Hex.isValid('#FFFFFF')).to.equal(true)
-    expect(Hex.isValid('#ZZZZZZ')).to.equal(false)
-    expect(Hex.isValid('#}{@}')).to.equal(false)
+    let hex = new Hex('#0099CC')
+    expect(hex.isValid('#0099CC')).to.equal(true)
+    expect(hex.isValid('#000000')).to.equal(true)
+    expect(hex.isValid('#FFFFFF')).to.equal(true)
+    expect(hex.isValid('#ZZZZZZ')).to.equal(false)
+    expect(hex.isValid('#}{@}')).to.equal(false)
   })
   
 });

@@ -30,7 +30,8 @@ describe('RGB', () => {
   })  
   
   it('should validate strings as rgb', () => {
-    expect(HSL.isValid('rgb(255,0,100)')).to.equal(true)
+    let rgb = new RGB('rgb(255,0,100)')
+    expect(rgb.isValid('rgb(255,0,100)')).to.equal(true)
   })
   
 })

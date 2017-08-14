@@ -31,7 +31,18 @@ describe('HSL', () => {
   })  
   
   it('should validate strings as hsl', () => {
-    expect(HSL.isValid('hsl(0,0,92)')).to.equal(true)
+    let hsl = new HSL('hsl(0,0,92)')
+    expect(hsl.isValid('hsl(0,0,92)')).to.equal(true)
+  })
+    
+  it('should be able to return an Array representation', () => {
+    let hsl = new HSL([236, 100, 73])
+    expect(hsl.toArray()).to.deep.equal([236, 100, 73])
+  })   
+  
+  it('should be able to parse string representation', () => {
+    let hsl = new HSL('hsl(236,100,73)')
+    expect(hsl.toArray()).to.deep.equal([236, 100, 73])
   })
   
 })
