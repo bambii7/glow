@@ -1,9 +1,10 @@
 require("babel-register");
 
-//var Hex = require('./colors/Hex.js')
 import Hex from './color-space/Hex'
 import RGB from './color-space/RGB'
 import HSL from './color-space/HSL'
+
+import Palette from './palette/Palette'
 
 class Glow {
  
@@ -19,4 +20,4 @@ class Glow {
   
 }
 
-export { Glow, Hex, RGB, HSL };
+export { Glow, Hex, RGB, HSL, Palette }
