@@ -17,8 +17,7 @@ export default class HSL extends Color {
   }
   
   set hue (val) {
-    let v = this.value[0]
-    this.value[0] = Math.abs((v + val) % 360)
+    this.value[0] = Math.abs(val % 360)
   }
   
   toRgb() {
