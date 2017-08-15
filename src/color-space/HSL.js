@@ -16,8 +16,24 @@ export default class HSL extends Color {
     return this.value[0]
   }
   
-  set hue (val) {
+  set hue(val) {
     this.value[0] = Math.abs(val % 360)
+  }
+  
+  get saturation() {
+    return this.value[1]
+  }
+    
+  set saturation(val) {
+    this.value[1] = Math.abs(val % 100)
+  }
+    
+  get lightness() {
+    return this.value[2]
+  }
+    
+  set lightness(val) {
+    this.value[2] = Math.abs(val % 100)
   }
   
   toRgb() {
