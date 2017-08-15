@@ -13,7 +13,7 @@ export default class HSL extends Color {
   }
   
   get hue() {
-    this.value[0]
+    return this.value[0]
   }
   
   set hue (val) {
