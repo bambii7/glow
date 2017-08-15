@@ -59,4 +59,18 @@ describe('HSL', () => {
     expect(hsl2.toArray()).to.deep.equal([236, 95, 73])
   })
   
+  it('should be able to adjust the lightness value', () => {
+    let hsl = new HSL('hsl(236,100,73)')
+    hsl.lightness /= 2
+    expect(hsl.toArray()).to.deep.equal([236, 100, 37])
+    
+    let hsl1 = new HSL('hsl(236,100,73)')
+    hsl1.lightness -= 180
+    expect(hsl1.toArray()).to.deep.equal([236, 100, 0])
+    
+    let hsl2 = new HSL('hsl(236,100,73)')
+    hsl2.lightness -= hsl2.saturation * 0.05
+    expect(hsl2.toArray()).to.deep.equal([236, 100, 68])
+  })
+  
 })

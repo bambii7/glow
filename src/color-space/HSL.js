@@ -27,7 +27,7 @@ export default class HSL extends Color {
   set saturation(val) {
     val = val > 100 ? 100 : val
     val = val < 0 ? 0 : val
-    this.value[1] = Math.abs(val)
+    this.value[1] = Math.round(val)
   }
     
   get lightness() {
@@ -35,7 +35,9 @@ export default class HSL extends Color {
   }
     
   set lightness(val) {
-    this.value[2] = Math.abs(val % 100)
+    val = val > 100 ? 100 : val
+    val = val < 0 ? 0 : val
+    this.value[2] = Math.round(val)
   }
   
   toRgb() {
