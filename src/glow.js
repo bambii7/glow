@@ -5,6 +5,7 @@ import RGB from './color-space/RGB'
 import HSL from './color-space/HSL'
 
 import Palette from './palette/Palette'
+import Monochromatic from './palette/Monochromatic'
 
 class Glow {
  
@@ -20,4 +21,4 @@ class Glow {
   
 }
 
-export { Glow, Hex, RGB, HSL, Palette }
+export { Glow, Hex, RGB, HSL, Palette, Monochromatic }
