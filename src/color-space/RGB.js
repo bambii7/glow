@@ -6,7 +6,9 @@ export default class RGB extends Color {
   
   toHex() {
     let hex = this.value.map(function (v) {
-      return v.toString(16)
+      let str = v.toString(16)
+      str = str.length === 1 ? '0' + str : str
+      return str
     }).join('').toUpperCase()
     return new Hex(hex)
   }
