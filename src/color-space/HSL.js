@@ -17,7 +17,7 @@ export default class HSL extends Color {
   }
   
   set hue(val) {
-    this.value[0] = Math.abs(val % 360)
+    this.value[0] = Math.round(Math.abs(val % 360))
   }
   
   get saturation() {
