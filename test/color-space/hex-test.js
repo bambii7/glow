@@ -49,4 +49,9 @@ describe('Hex', function () {
     expect(hex.isValid('#}{@}')).to.equal(false)
   })
   
+  it('should allow leading 00 in hex values', () => {
+    let hex = new Hex('#0099CC').toRgb().toHex()
+    expect(hex.toString()).to.equal('#0099CC')
+  })
+  
 });
