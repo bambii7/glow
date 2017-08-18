@@ -54,4 +54,9 @@ describe('Hex', function () {
     expect(hex.toString()).to.equal('#0099CC')
   })
   
+  it('should convert to and from RGB identically', () => {
+    let hex = new Hex('#A099CC').toRgb().toHex()
+    expect(hex.toString()).to.equal('#A099CC')
+  })  
+  
 });
