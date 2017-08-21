@@ -7,13 +7,14 @@ import HSL from './color-space/HSL'
 import Palette from './palette/Palette'
 import Monochromatic from './palette/Monochromatic'
 import Analogous from './palette/Analogous'
+import Complementary from './palette/Complementary'
 
 class Glow {
  
   hexToHsl(hex) {
     var rgb = this.hexToRgb(hex)
     return this.rgbToHsl(rgb)
-  } 
+  }
   
   hslToHex(hsl) {
     var rgb = this.hslToRgb(hsl)
@@ -22,4 +23,4 @@ class Glow {
   
 }
 
-export { Glow, Hex, RGB, HSL, Palette, Monochromatic, Analogous }
+export { Glow, Hex, RGB, HSL, Palette, Monochromatic, Analogous, Complementary }
