@@ -9,6 +9,7 @@ import Monochromatic from './palette/Monochromatic'
 import Analogous from './palette/Analogous'
 import Complementary from './palette/Complementary'
 import Compound from './palette/Compound'
+import Triad from './palette/Triad'
 
 class Glow {
  
@@ -24,4 +25,4 @@ class Glow {
   
 }
 
-export { Glow, Hex, RGB, HSL, Palette, Monochromatic, Analogous, Complementary, Compound }
+export { Glow, Hex, RGB, HSL, Palette, Monochromatic, Analogous, Complementary, Compound, Triad }
