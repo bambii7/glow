@@ -2,6 +2,7 @@ import HSL from '../color-space/HSL'
 
 export default class Palette {
   constructor(hsl) {
+    hsl = hsl instanceof HSL ? hsl : hsl.toHsl()
     this.value = hsl
   }
   

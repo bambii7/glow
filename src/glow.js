@@ -1,5 +1,6 @@
 require("babel-register");
 
+import Color from './color-space/Color'
 import Hex from './color-space/Hex'
 import RGB from './color-space/RGB'
 import HSL from './color-space/HSL'
@@ -26,4 +27,4 @@ class Glow {
   
 }
 
-export { Glow, Hex, RGB, HSL, Palette, Monochromatic, Analogous, Complementary, Compound, Triad, Shades }
+export { Glow, Color, Hex, RGB, HSL, Palette, Monochromatic, Analogous, Complementary, Compound, Triad, Shades }

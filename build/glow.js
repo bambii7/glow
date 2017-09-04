@@ -98,6 +98,7 @@ var Palette = function () {
   function Palette(hsl) {
     _classCallCheck(this, Palette);
 
+    hsl = hsl instanceof _HSL2.default ? hsl : hsl.toHsl();
     this.value = hsl;
   }
 
@@ -559,9 +560,13 @@ exports.default = Hex;
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.Shades = exports.Triad = exports.Compound = exports.Complementary = exports.Analogous = exports.Monochromatic = exports.Palette = exports.HSL = exports.RGB = exports.Hex = exports.Glow = undefined;
+exports.Shades = exports.Triad = exports.Compound = exports.Complementary = exports.Analogous = exports.Monochromatic = exports.Palette = exports.HSL = exports.RGB = exports.Hex = exports.Color = exports.Glow = undefined;
 
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+var _Color = __webpack_require__(1);
+
+var _Color2 = _interopRequireDefault(_Color);
 
 var _Hex = __webpack_require__(4);
 
@@ -632,6 +637,7 @@ var Glow = function () {
 }();
 
 exports.Glow = Glow;
+exports.Color = _Color2.default;
 exports.Hex = _Hex2.default;
 exports.RGB = _RGB2.default;
 exports.HSL = _HSL2.default;
