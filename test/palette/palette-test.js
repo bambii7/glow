@@ -26,5 +26,13 @@ describe('Palette', () => {
     let palette = new Palette(hex)
     expect(palette.value.toString()).to.equal('hsl(200,50,40)')
   })
+  
+  it('should throw an error if not an instance of Color', () => {
+    var fn = () => {
+      let arr = new Array()
+      let palette = new Palette(hex)
+    }
+    expect(fn).to.throw()
+  })
 
 })

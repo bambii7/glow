@@ -90,6 +90,10 @@ var _HSL = __webpack_require__(3);
 
 var _HSL2 = _interopRequireDefault(_HSL);
 
+var _Color = __webpack_require__(1);
+
+var _Color2 = _interopRequireDefault(_Color);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -98,6 +102,9 @@ var Palette = function () {
   function Palette(hsl) {
     _classCallCheck(this, Palette);
 
+    if (!(hsl instanceof _Color2.default)) {
+      throw "parameter must be an istance of `Color`";
+    }
     hsl = hsl instanceof _HSL2.default ? hsl : hsl.toHsl();
     this.value = hsl;
   }
