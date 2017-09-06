@@ -30,9 +30,5 @@ Colors are initalised with string representation. RGB & HSL will accept an Array
   
 ```
 
-### TODO
-* Documentation of use
-* Get complementary colour, split, double, linear
-
 ### Licence 
 This project is licensed under the terms of the MIT license.
