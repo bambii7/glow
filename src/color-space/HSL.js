@@ -40,6 +40,12 @@ export default class HSL extends Color {
     this.value[2] = Math.round(val)
   }
   
+  complementary() {
+    let hsl = new HSL(this.toString())
+    hsl.hue += 180
+    return hsl
+  }
+  
   toRgb() {
       let h, s, l,
           r, g, b,

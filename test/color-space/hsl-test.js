@@ -73,4 +73,9 @@ describe('HSL', () => {
     expect(hsl2.toArray()).to.deep.equal([236, 100, 68])
   })
   
+  it('should return the complementary value', () => {
+    let hsl = new HSL('hsl(0,100,73)')
+    expect(hsl.complementary().toString()).to.equal('hsl(180,100,73)')
+  })
+  
 })

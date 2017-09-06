@@ -370,6 +370,13 @@ var HSL = function (_Color) {
       return 'hsl(' + hsl + ')';
     }
   }, {
+    key: 'complementary',
+    value: function complementary() {
+      var hsl = new HSL(this.toString());
+      hsl.hue += 180;
+      return hsl;
+    }
+  }, {
     key: 'toRgb',
     value: function toRgb() {
       var h = void 0,
